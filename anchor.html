@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>⚓ ANCHOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="anchor.css" />
+</head>
+<body class="theme-dark">
+  <!-- Word display -->
+  <div id="reader">
+    <div id="word"></div>
+    <!-- Top edge (Context View trigger) -->
+    <div id="top-edge"></div>
+    <!-- Bottom edge (controls toggle) -->
+    <div id="bottom-edge"></div>
+    <!-- Anchor icon (Help) -->
+    <button id="anchor-help" aria-label="Help">⚓</button>
+  </div>
+
+  <!-- Controls bar -->
+  <div id="controls" class="hidden">
+    <button id="back">⟵</button>
+    <button id="play-pause">▶</button>
+    <button id="forward">⟶</button>
+
+    <label class="inline">
+      <span>Speed</span>
+      <input type="range" id="speed" min="50" max="800" step="10" value="250" />
+    </label>
+
+    <button id="sections-btn">Sections</button>
+    <button id="theme-btn">Theme</button>
+    <button id="anchor-color-btn">Anchor</button>
+    <button id="settings-btn">Settings</button>
+  </div>
+
+  <!-- Context View -->
+  <div id="context-view" class="overlay hidden">
+    <div id="context-header"></div>
+    <div id="context-body"></div>
+  </div>
+
+  <!-- Help overlay -->
+  <div id="help-overlay" class="overlay hidden">
+    <div id="help-inner">
+      <h1>⚓ ANCHOR — Help & Shortcuts</h1>
+      <ul id="help-topics">
+        <li data-topic="context">Context View</li>
+        <li data-topic="navigation">Navigation</li>
+        <li data-topic="sections">Sections</li>
+        <li data-topic="jumping">Jumping</li>
+        <li data-topic="themes">Themes & Anchor</li>
+        <li data-topic="bookmarklet">Bookmarklet</li>
+        <li data-topic="troubleshooting">Troubleshooting</li>
+      </ul>
+      <p class="hint">Tap a topic to read it in one‑word mode.</p>
+    </div>
+  </div>
+
+  <!-- Settings panel -->
+  <div id="settings-panel" class="panel hidden">
+    <h2>Settings</h2>
+
+    <label>
+      Speed preset
+      <select id="speed-preset">
+        <option value="slow">Slow</option>
+        <option value="medium" selected>Medium</option>
+        <option value="fast">Fast</option>
+        <option value="storm">Storm</option>
+      </select>
+    </label>
+
+    <label>
+      Theme
+      <select id="theme-select">
+        <option value="dark" selected>Dark</option>
+        <option value="light">Light</option>
+      </select>
+    </label>
+
+    <label>
+      Anchor color
+      <select id="anchor-select">
+        <option value="teal" selected>Teal</option>
+        <option value="amber">Amber</option>
+        <option value="rose">Rose</option>
+        <option value="lime">Lime</option>
+      </select>
+    </label>
+
+    <label>
+      Section size (words)
+      <input type="number" id="section-size" min="200" max="5000" value="1500" />
+    </label>
+
+    <label class="inline">
+      <input type="checkbox" id="resume-toggle" checked />
+      <span>Resume where I left off</span>
+    </label>
+
+    <button id="settings-close">Close</button>
+  </div>
+
+  <script src="anchor.js"></script>
+</body>
+</html>
