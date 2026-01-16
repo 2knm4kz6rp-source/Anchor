@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "⚓ Anchor",
+  "description": "Send page text to Anchor in a new tab.",
+  "version": "1.0",
+  "action": {
+    "default_title": "⚓ Anchor"
+  },
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
